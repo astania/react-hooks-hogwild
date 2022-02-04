@@ -29,7 +29,11 @@ function SortingButtons({ setHogsToFilter, hogsToFilter }) {
     }
 
     const sortByWeight = () => {
-        let weightSortedPigs = currentPigSet
+        let weightSortedPigs = [...currentPigSet].sort((a,b) => {
+            return a.weight - b.weight
+        })
+        setHogsToFilter(weightSortedPigs)
+    
     }
 
     return (
